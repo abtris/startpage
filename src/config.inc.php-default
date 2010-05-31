@@ -1,0 +1,24 @@
+<?php
+/**
+ * Config file
+ * $Id: config.inc.php,v bd6da69ba419 2009/07/17 11:45:45 ladislav $
+ */
+define('MYSQL_USER', 'startpage'); // Your MySQL username
+define('MYSQL_PASS', 'startpage'); // ...and password
+define('MYSQL_HOST', 'localhost');
+define('MYSQL_DB', 'startpage');
+define('SQLITE_TEST_DB', '');
+define('BUG_URL', '');
+define('SVN_PATH', '');
+define('SQLITE_PATH', '/');
+define('MYADMIN_PATH', 'http://localhost/phpmyadmin/');
+define('MINADMIN_PATH', 'http://localhost/adminer/adminer/');
+define('APACHELOG_PATH', '/usr/local/zend/var/log/php.log');
+define('BASE_URL', '');
+define('PROJECT_FILTER', '*');
+define('WIKI', '');
+define('WIKI_LINK', '');
+define('XMLLOGNAME', '.xml');
+define('PROJECT_PATH', ''); // support for more directories separator pipe | 
+define('PROJECT_URL', '');
+define('REP_BROWSER','');

@@ -1,0 +1,101 @@
+/* $Id: startpage.css,v f7475413d2e9 2009/02/09 10:34:39 ladislav $ */
+/* common */    
+    body {
+              font-family: Verdana, Helvetica, Tahoma, "Lucida Grande CE", lucida, sans-serif;
+              font-size: small;
+              background:#ffffff url(images/background.gif) top center repeat-y;
+              color:#404040;
+    }
+	
+	
+    h1 {  color:#4088b8; font-size:2em; margin-bottom:10px;}
+    h1.index {  font-size:3.2em; }
+    h2 {  font-size:1.2em;}
+    strong { color:#4088b8; }  
+    a { color: rgb(153,102,0); font-weight:normal; }    
+    ul li { list-style-type: square;  }    
+    #main { width:880px; margin:5px auto;}    
+    #main p { text-align:left; padding-bottom:3px; margin-bottom:3px; border-bottom:1px solid gray;}
+    #main p.foot { text-align:right; padding-bottom:3px; margin-bottom:3px; border:none;}
+    #main center {  border-top:1px solid gray; padding-top:3px; }
+
+    #changelog { border-collapse:collapse; width:880px;}
+    #changelog th { color:#4088b8;  }
+    #changelog th,#changelog td { text-align:center; vertical-align:top; border:1px solid gray; padding:3px 5px;  }
+    #changelog .msg { text-align:left; font-family:Verdana,Courier, Monaco,"Lucida Console","Courier New",monospace; font-size:90%;  }
+    #changelog .msg strong { font-size:100%; font-family: Tahoma, "Lucida Grande CE", lucida, sans-serif;}
+    #changelog .path { color: gray; padding-top:5px; }
+    .cols { clear:left; padding:5px 0; }
+    .left { float:left; width:440px; }
+    .right { float:left; width:440px; }
+    dl dt { float:left; border-bottom:1px solid gray; width:auto; margin-top:0px; font-weight:bold; text-transform: uppercase; }
+    dl dd { margin-left:70px; clear:left; }
+    dl dd a { padding:0 2px; text-transform: uppercase;}
+    #quicklinks { margin:0 auto; width:100%; }
+    #quicklinks p { border:none; margin:0; padding:0; margin-bottom:3px;   }
+    #quicklinks span { float:left; width:25%; }
+    #quicklinks div { float:right; padding:1em 8em; }
+    #quicklinks div img { border:none; }    
+    #wc th { padding:0 .3em; color:gray; text-transform: uppercase; text-align:left; }
+    #wc td { padding:0 .3em; }
+    #wc .firstrow th { text-transform:none; text-align:left; color:#4088b8;}
+    #wc .name { text-transform: uppercase; vertical-align: top; }
+    #wc .log { vertical-align: top; }
+    #wc .msg { vertical-align: top; font-family: Verdana, sans-serif; }
+    #wc .msg strong { font-size:100%; font-family: Verdana, sans-serif;}
+    ul { padding-bottom:0; padding-top:0; margin-bottom:0; margin-top:3px; }
+    .dayback { background:#E6FFBF; }
+    .thisday { background:#FFCCBF; }
+    #foot { text-align:center; border-top:1px solid gray; padding-top:3px; }
+    #info table { border-collapse:collapse; width:100%; margin:0 auto; }
+    #info table td,#info table th { border:1px solid gray; }
+    #info h2,#info h1 { text-align:center; text-transform:uppercase; }
+    #info .h td,#info .v td { border:none; }
+    
+    pre {
+    width:400xp; overflow:auto; background:white; border:1px solid gray; margin:3px;
+    }
+    
+    
+ul#tabnav { /* general settings */
+text-align: left; /* set to left, right or center */
+margin: 1em 0 1em 0; /* set margins as desired */
+font-size:120%;
+font-weight: bold;
+border-bottom: 1px solid gray; /* set border COLOR as desired */
+list-style-type: none;
+padding: 3px 20px 3px 20px; /* THIRD number must change with respect to padding-top (X) below */
+}
+
+ul#tabnav li { /* do not change */
+display: inline;
+}
+
+body#tab1 li.tab1, body#tab2 li.tab2, body#tab3 li.tab3, body#tab4 li.tab4 { /* settings for selected tab */
+border-bottom: 1px solid #fff; /* set border color to page background color */
+background-color: #fff; /* set background color to match above border color */
+}
+
+body#tab1 li.tab1 a, body#tab2 li.tab2 a, body#tab3 li.tab3 a, body#tab4 li.tab4 a, body#tab5 li.tab5 a { /* settings for selected tab link */
+background-color: #fff; /* set selected tab background color as desired */
+color: #000; /* set selected tab link color as desired */
+position: relative;
+top: 1px;
+padding-top: 4px; /* must change with respect to padding (X) above and below */
+}
+
+ul#tabnav li a { /* settings for all tab links */
+padding: 3px 10px; /* set padding (tab size) as desired; FIRST number must change with respect to padding-top (X) above */
+border: 0px solid gray; /* set border COLOR as desired; usually matches border color specified in #tabnav */
+background-color: rgb(235,235,235); /* set unselected tab background color as desired */
+color: rgb(153,102,0); /* set unselected tab link color as desired */
+margin-right: 10px; /* set additional spacing between tabs as desired */
+font-weight: bolder;
+text-decoration: none;
+border-bottom: none;
+}
+
+ul#tabnav a:hover { /* settings for hover effect */
+background: rgb(153,102,0); /* set desired hover color */
+color: white;
+}

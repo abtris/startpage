@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="start_page" basedir="." default="main">
+<!-- $Id: build.xml,v 75eae3b69b79 2009/03/05 16:12:07 ladislav $ --> 
+    <property name="tmp" value="/tmp" />
+    <property name="wsname" value="source" />
+    <property name="package"  value="${phing.project.name}" override="true" />
+    <property name="builddir" value="${tmp}/build/${phing.project.name}" override="true" />
+    <property name="srcdir"   value="./src/" override="true" />
+    
+    <!-- Main Target -->
+    <target name="main" description="main target">
+    
+        <!-- Create dirs -->
+        <mkdir dir="${builddir}/reports"/>
+        <mkdir dir="${builddir}/reports/phpunit"/>
+        <mkdir dir="${builddir}/reports/coverage"/>
+    
+        <!-- PHP API Documentation -->
+        <phpdoc title="API Documentation"
+          destdir="${builddir}/apidocs"
+          sourcecode="yes"
+          defaultpackagename="StartPage"
+          output="HTML:Smarty:PHP">
+           <fileset dir=".">
+              <include name="*/*.php" />      
+           </fileset>
+        </phpdoc>
+
+<!-- PHP CodeSniffer -->
+ <exec command="phpcs --standard=ZEND --report=checkstyle ${ws}/${wsname}/src/ > ${builddir}/reports/checkstyle.xml" escape="false" />
+
+ <!-- PHPUnit --> 
+ <exec command="phpunit --log-xml ${builddir}/reports/phpunit.xml --log-pmd ${builddir}/reports/phpunit.pmd.xml --coverage-clover ${builddir}/reports/coverage/clover.xml --coverage-html ${builddir}/reports/coverage/ tests/AllTests.php"/>
+ 
+ <phpunit>
+  <formatter todir="${builddir}/reports/phpunit" type="xml"/>
+  <batchtest>
+    <fileset dir=".">
+      <include name="tests/*Test*.php"/>      
+    </fileset>
+  </batchtest>
+</phpunit>
+<phpunitreport infile="${builddir}/reports/phpunit/testsuites.xml" format="frames" todir="${builddir}/reports/phpunit/" />
+ 
+    </target>
+</project>
