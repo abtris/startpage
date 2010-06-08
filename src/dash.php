@@ -76,7 +76,7 @@
       <div class="cols">
           <p><strong>Virtual hosts at <?php echo strtolower(php_uname('n')); ?></strong></p>
           <?php
-          if (!is_null(StartPage::hosts()) {
+          if (!is_null(StartPage::hosts())) {
             foreach (StartPage::hosts() as $val) {
                 echo "<a href='http://".$val[2]."'>http://".$val[2]."</a>";
                 echo "<br />";
