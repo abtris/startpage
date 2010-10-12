@@ -359,9 +359,9 @@ class StartPage
     public static function hosts ()
     {
         // detekce OS
-        if (eregi("linux", $_SERVER['HTTP_USER_AGENT'])) {
+        if (preg_match("/linux/i", $_SERVER['HTTP_USER_AGENT'])) {
             $os = "linux";
-        } elseif (eregi("win32", $_SERVER['HTTP_USER_AGENT'])) {
+        } elseif (preg_match("/win32/i", $_SERVER['HTTP_USER_AGENT'])) {
             $os = "win";
         } else {
             $os = "win";
@@ -373,7 +373,6 @@ class StartPage
         }
         if (file_exists($filename)) {
             $obsah = file_get_contents($filename);
-//            var_dump($obsah);
             $reg = '/^(\d+.\d+.\d+.\d+)\s+(\S+)/m';
             preg_match_all($reg, $obsah, $matches, PREG_SET_ORDER);
             return $matches;
